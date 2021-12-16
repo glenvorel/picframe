@@ -520,7 +520,7 @@ class ViewerDisplay:
 
         if self.__alpha >= 1.0 and tm < self.__name_tm:
             # this sets alpha for the TextBlock from 0 to 1 then back to 0
-            dt = 1.1 - (self.__name_tm - tm) / self.__show_text_tm # i.e. dt from 0.1 to 1.1
+            dt = 1.0 - (self.__name_tm - tm) / self.__show_text_tm # i.e. dt from 0.0 to 1.0
             ramp_pt = max(4.0, self.__show_text_tm / 4.0) # always > 4 so text fade will always < 4s
             # create single saw tooth over 0 to __show_text_tm
             alpha = max(0.0, min(1.0, ramp_pt * (1.0 - abs(1.0 - 2.0 * dt)))) # function only run if image alpha is 1.0 so can use 1.0 - abs...
