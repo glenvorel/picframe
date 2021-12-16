@@ -164,7 +164,7 @@ class InterfacePeripherals:
             # When keyboard is enabled, menu must be constantly shown to allow menu items
             # register `shortcut` keys - instead of hiding it, it is rendered out of view
             x *= -1
-        menu = pi3d.Menu(menuitems=self.__menu_buttons, x=x, y=self.__viewer.display_height // 2)
+        menu = pi3d.Menu(menuitems=self.__menu_buttons, x=x + 40, y=self.__viewer.display_height // 2)
         if self.__input_type != "keyboard":
             menu.hide()
         return menu
